@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width  , initial-scale=1.0" />
+    <title>RoadRealm</title>
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="SCRIPT.js" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo"><i class="fa-solid fa-gauge"></i>RoadRealm</a>
+      <div class="icons">
+        <div id="new-btn" ><b><a href="https://www.cardekho.com/newcars" style="text-decoration: none; ">NEW CARS</a></b></div>
+        <div id="bike-btn"><b><a href="https://www.bikewale.com/upcoming-bikes/" style="text-decoration: none;">NEW BIKES</a></b></div>
+        
+      </div>
+
+
+      <form action="" class="search-form">
+        <input
+          type="search"
+          name=""
+          placeholder="search here..."
+          id="searchBox"
+        />
+        <label for="searchBox" class="fas fa-search"></label>
+      </form>
+
+     
+      
+
+    </header>
+
+    <section class="home" id="home">
+      <div class="image">
+        <img
+          src="https://static.autox.com/uploads/2016/07/mahindra-thar-vs-re-himalayan.jpg"
+          alt=""
+          class="rounded-5" style="width: 100%;"
+        />
+      </div>
+      
+    </section>
+    <hr width="100%" >
+
+   
+</head>
+<body>
+
+  <img src="https://s3.us-east-2.amazonaws.com/irwin-ag/buying-used/Figuring-Out-Need-Used-Cars-2.jpg" alt="Find your Vehicle" class="ImageOwn" >
+  
+<div class="form-container">
+  <h1 class="heading1"><b>Find the Right Vehicle:</b></h1>
+  <form id="userForm" action="connect.php" method="post">
+      <div class="form-group">
+          <label for="name"><b>Name:
+          </b></label>
+          <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+          <label for="vehicle">Select vehicle:</label>
+          <select id="vehicle" name="vehicle" onchange="showCarInfo(this),showBikeInfo(this)">
+              <option value="bike">Bike</option>
+              <option value="car">Car</option>
+          </select>
+      </div>
+      <div class="form-group car-info" id="carInfo">
+          <label for="brand">Brand Name:</label>
+          <input type="text" id="brand" name="brand">
+          <label for="class">Car Class:</label>
+          <input type="text" id="class" name="class">
+          <label for="color">Color:</label>
+          <input type="text" id="color" name="color">
+          <label for="mileage">Mileage:</label>
+          <input type="text" id="mileage" name="mileage">
+      </div>
+    
+
+      <div class="form-group bike-info" id="bikeInfo">
+        <label for="brand">Brand Name:</label>
+        <input type="text" id="brand" name="brand">
+        <label for="type">Bike type:</label>
+        <input type="text" id="type" name="type">
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color">
+        <label for="Budget">Budget:</label>
+        <input type="text" id="Budget" name="Budget">
+      </div>
+    
+      <div class="form-group">
+          <button type="submit">Submit</button>
+      </div>
+  </form>
+
+</div>
+
+
+<script>
+  function showCarInfo(select) {
+    var carInfo = document.getElementById("carInfo");
+    if (select.value === "car") {
+        carInfo.style.display = "block";
+    } else {
+        carInfo.style.display = "none";
+    }
+}
+function showBikeInfo(select) {
+    var bikeInfo = document.getElementById("bikeInfo");
+    if (select.value === "bike") {
+        bikeInfo.style.display = "block";
+    } else {
+        bikeInfo.style.display = "none";
+    }
+}
+
+</script>
+
+<hr width="100%">
+<h1 class="bg-info"><strong>Featured Cars</strong></h1>
+<div id="main-div">
+  <div class="car-info2">
+    <div
+      class="car-image"
+      style="
+        background-image: url(https://imgd.aeplcdn.com/664x374/n/cw/ec/45691/dzire-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80);
+      "
+    ></div>
+    <a href="#" class="car-details-link">Maruti Suzuki Dzire Details</a>
+  </div>
+  <div class="car-info2">
+    <div
+      class="car-image"
+      id="scorpio"
+      style="
+        background-image: url(https://auto.mahindra.com/-/media/project/mahindra/dotcom/mahindra/dark-theme-mahindra-images/hello-test-z101/scorpio_840x560.png?rev=0e100cf22a9648b487ec37c2461a7c70);
+        height: 300px;
+      "
+    ></div>
+    <a href="#" class="car-details-link">Scorpio-N Details</a>
+  </div>
+  <div class="car-info2">
+    <div
+      class="car-image"
+      style="
+        background-image: url(data:image/jpeg;base64,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);
+      "
+    ></div>
+    <a href="#" class="car-details-link">Mahindra Thar Details</a>
+  </div>
+</div>
+
+<hr width="100%">
+<h1 class="bg-info"><strong>Featured Bikes</strong></h1>
+<div id="main-div">
+  <div class="bike-info2">
+    <div
+      class="bike-image"
+      style="
+        background-image: url(https://www.carandbike.com/_next/image?url=https%3A%2F%2Fimages.carandbike.com%2Fbike-images%2Fcolors%2Fhero%2Fhf-deluxe%2Fhero-hf-deluxe-gold.jpg%3Fv%3D1686044315&w=750&q=75);
+      "
+    ></div>
+    <a href="#" class="bike-details-link">Hero HF Deluxe Details</a>
+  </div>
+  <div class="bike-info2">
+    <div
+      class="bike-image"
+      id="bullet"
+      style="
+        background-image: url(https://akm-img-a-in.tosshub.com/indiatoday/images/story/202001/Classic-350-Black_BS_VI_0.png?size=690:388);
+        height: 300px;
+      "
+    ></div>
+    <a href="#" class="bike-details-link">Royal Enfeild Classic 350 Details</a>
+  </div>
+  <div class="bike-info2">
+    <div
+      class="bike-image"
+      style="
+        background-image: url(https://imgd.aeplcdn.com/1280x720/n/cw/ec/103183/raider-125-right-front-three-quarter-4.png?isig=0);
+      "
+    ></div>
+    <a href="#" class="car-details-link">TVS Raider 125 Details</a>
+  </div>
+</div>
+
+<hr width="100%">
+<h1 class="bg-warning"><strong>Top Selling Car Brands:</strong></h1>
+<div id="brand-div">
+  <div class="car-brand1">
+    <div
+      class="brand-image"
+      style="background-image: url(https://thangs.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-thangs-public%2Fuploads%2Fattachments%2Fac78a792-5178-4d7e-9b3b-a5dcca1f86b7%2Funtitled.146.png&w=3840&q=75);"
+    >
+   
+  </div>
+    <a href="#" class="bike-details-link">Maruti Suzuki Cars</a>
+  </div>
+  <div class="car-brand1">
+    <div
+      class="brand-image"
+      id="bullet"
+      style="
+        background-image: url(data:image/png;base64,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);
+        height: 300px;
+      "
+    ></div>
+    <a href="#" class="bike-details-link">Tata cars</a>
+  </div>
+  <div class="car-brand1">
+    <div
+      class="brand-image"
+      style="
+        background-image: url(https://thumbs.dreamstime.com/b/logo-hyundai-logo-hyundai-car-color-vector-format-aviable-ai-124925301.jpg);
+      "
+    ></div>
+    <a href="#" class="car-details-link">Hyundai Cars</a>
+  </div>
+
+  <div class="car-brand1">
+    <div
+      class="brand-image"
+      style="
+        background-image: url(https://logowik.com/content/uploads/images/mahindra-suv1293.jpg);
+      "
+    ></div>
+    <a href="#" class="car-details-link">Mahindra Cars</a>
+  </div>
+
+  <div class="car-brand1">
+    <div
+      class="brand-image"
+      style="
+        background-image: url(https://blog.logomaster.ai/hs-fs/hubfs/toyota-logo-metallic.jpg?width=672&height=454&name=toyota-logo-metallic.jpg);
+      "
+    ></div>
+    <a href="#" class="car-details-link">Toyota Cars</a>
+  </div>
+
+  <div class="car-brand1">
+    <div
+      class="brand-image"
+      style="
+        background-image: url(https://brandlogos.net/wp-content/uploads/2021/04/kia-brandlogo.net_-512x512.png);
+      "
+    ></div>
+    <a href="#" class="car-details-link">Kia Cars</a>
+  </div>
+
+</div>
+ 
+<hr width="100%">
+<h1 class="bg-warning"><strong>Top Selling Bike Brands:</strong></h1>
+<div id="brand-div">
+  <div class="car-brand1">
+    <div
+      class="brand-image"
+      style="background-image: url(https://w7.pngwing.com/pngs/874/996/png-transparent-royal-enfield-logo-enfield-cycle-co-ltd-motorcycle-logo-royal-enfield-bicycle-royal-emblem-text-label-thumbnail.png);"
+    >
+   
+  </div>
+    <a href="#" class="bike-details-link">Royal Enfeild Bikes</a>
+  </div>
+  <div class="car-brand1">
+    <div
+      class="brand-image"
+      id="bullet"
+      style="
+        background-image: url(https://download.logo.wine/logo/Hero_MotoCorp/Hero_MotoCorp-Logo.wine.png);
+        height: 300px;
+      "
+    ></div>
+    <a href="#" class="bike-details-link">Hero Bikes</a>
+  </div>
+  <div class="car-brand1">
+    <div
+      class="brand-image"
+      style="
+        background-image: url(https://static.vecteezy.com/system/resources/previews/020/336/706/original/honda-logo-honda-icon-free-free-vector.jpg);
+      "
+    ></div>
+    <a href="#" class="car-details-link">Honda Bikes</a>
+  </div>
+
+  <div class="car-brand1">
+    <div
+      class="brand-image"
+      style="
+        background-image: url(https://i.pinimg.com/564x/12/07/ab/1207ab18ae8f87003b45a28278ee5256.jpg);
+      "
+    ></div>
+    <a href="#" class="car-details-link">TVS Bikes</a>
+  </div>
+
+  <div class="car-brand1">
+    <div
+      class="brand-image"
+      style="
+        background-image: url(https://static.vecteezy.com/system/resources/previews/019/766/250/non_2x/bajaj-logo-bajaj-icon-transparent-free-png.png);
+      "
+    ></div>
+    <a href="#" class="car-details-link">Bajaj Bikes</a>
+  </div>
+
+  <div class="car-brand1">
+    <div
+      class="brand-image"
+      style="
+        background-image: url(https://arabianriders.com/wp-content/uploads/2015/03/suzuki-motorcycle-logo.png);
+      "
+    ></div>
+    <a href="#" class="car-details-link">Suzuki Bikes</a>
+  </div>
+
+</div>
+<footer class="footer">
+  <div class="footer">
+    <div class="row">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+           <li><a href="#">Our Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+             <li><a href="#">More</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Get Help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Online Shop</h4>
+        <ul>
+          <li><a href="#">Car Accessories</a></li>
+           <li><a href="#">Bike Accessories</a></li>
+        </ul>
+      </div>
+        <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
